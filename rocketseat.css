@@ -1,0 +1,205 @@
+*{margin: 0px;
+  
+}
+
+:root{
+--text-color: white;
+--bg-url: url(/img/fundo\ joao.jpg);
+--stroke-color: rgba(255, 255, 255, 0.5);
+--surface-color:rgba(255, 255, 255, 0.05);
+--surface-color-hover:rgba(255, 255, 255, 0.05);
+--social-link-hover: rgba(255, 255, 255, 0.2);
+--font-height:500px;
+--switch-bg-url: url(/moon-star.svg)
+
+}
+
+.light{
+--text-color: black;
+--bg-url: url(/img/fundo\ eu.jpg);
+--stroke-color: rgba(0, 0, 0, 0.5);
+--surface-color:rgba(0, 0, 0, 0.05); 
+--surface-color-hover:rgba(0, 0, 0, 0.05);
+--social-link-hover: rgba(0, 0, 0, 0.2);
+--font-height:500px;
+--switch-bg-url: url(/sun.svg)
+}  
+
+
+
+body{
+    background-image:var(--bg-url);
+    background-size:auto;
+    background-repeat:no-repeat;
+    background-position:top center;
+    background-size:cover;   
+    height: 100vh;
+}
+
+#container{
+    margin: auto;   
+    width:100%;
+    max-width: 588px; ;
+    height: 200px;
+    margin-top: 20px;
+  
+}
+#profile img{
+    width:150px;
+    display: block;
+    margin:auto;
+}
+
+#profile p{
+    font-weight: var(--font-height);
+    font-size:16px;
+    line-height:24px;
+
+   
+}
+
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+
+body *{
+font-family: "Inter", sans-serif;
+color:var(--text-color);
+
+}
+
+ul{ 
+    list-style:none;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    padding-right:10%;
+    padding: 24px 0;
+    
+
+}
+
+ul li a {
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: var(--font-height);
+    transition: background 0.5s;
+}
+
+
+ul li a:hover{
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+
+}
+
+#social{
+display: flex;
+
+padding: 24px 0;
+font-size: 40px;
+justify-content: center;
+}
+
+#social a{
+display: flex;
+justify-content: center;
+align-items: center;
+padding:16px;
+border-radius: 50%;
+transition: background 0.2s;
+}
+
+
+
+
+#social a:hover{
+background: var(--social-link-hover);
+padding:16px;
+}
+
+footer{
+text-align: center;
+padding: 24px 0;
+}
+
+
+#switch{
+position: relative;
+width: 67px;
+margin: 4px auto;
+}
+
+
+#switch button{
+width: 32px;
+height: 32px;
+background: white var(--switch-bg-url) no-repeat center;
+border: 0;
+border-radius: 50%;
+position: absolute;
+z-index: 1;
+left: 0;
+transform: translateY(-50%);
+top:50%;
+animation: slide-back 0.2s;
+
+}
+#switch button:hover{
+outline: 8px solid var(--social-link-hover)
+}
+
+
+
+#switch span{
+width:64px;
+display: block;
+height:24px;
+background: var(--surface-color);
+border:1px solid var(--stroke-color);
+backdrop-filter: blur(4px);
+border-radius: 9999px;
+}
+
+.light #switch button{
+animation: slide-in 0.4s forwards;
+}
+
+@media (min-width: 700px) {
+:root{ 
+--bg-url: url(/img/fundog\ joao.jpg)
+}
+.light{
+--bg-url: url(/img/fundog\ eu.jpg);
+
+}
+}
+
+@keyframes slide-in {
+from{
+    left:0
+}
+to{
+    left:50%
+}
+
+}
+
+@keyframes slide-back{
+from{
+left:50%
+}
+to{
+left:0
+}
+}
